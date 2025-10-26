@@ -5,27 +5,33 @@ Create a function called getComputerChoice
 */
 
 function getComputerChoice(){
-  console.log("Rock");
-  console.log("Paper");
-  console.log("Scissors");
+  let choiceNumber = Math.floor(Math.random()*3);
+  let choiceString;
+  console.log(choiceNumber);
+
+  switch(choiceNumber){
+    case 0:
+      choiceString = "Rock";
+      break;
+    
+    case 1:
+      choiceString = "Paper";
+      break;
+
+    case 2:
+      choiceString = "Scissors";
+      break;
+
+    default:
+      choiceString = "I don't wanna play anymore";
+  }
+
+  return choiceString;
+
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
 
-
-// Get a random number between 0 and 1 and store it into a variable
-
-let randomNumber = Math.random();
-
-console.log(randomNumber);
-
-// Multiply last result times 3
-
-console.log(randomNumber*3);
-
-// Round down the number
-
-console.log(Math.floor(randomNumber*3));
 
 
 
