@@ -11,3 +11,21 @@ function getComputerChoice(){
 }
 
 getComputerChoice();
+
+
+// Get a random number between 0 and 1 and store it into a variable
+
+let randomNumber = Math.random();
+
+console.log(randomNumber);
+
+// Multiply last result times 3
+
+console.log(randomNumber*3);
+
+// Round down the number
+
+console.log(Math.floor(randomNumber*3));
+
+
+
