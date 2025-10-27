@@ -4,6 +4,9 @@ Create a function called getComputerChoice
   Call function getComputerChoice  
 */
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
   let choiceNumber = Math.floor(Math.random()*3);
   let choiceString;
@@ -30,14 +33,18 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-  return (prompt("Choose Rock, Papaer or Scissors","Rock"));
+  return (prompt("Choose Rock, Paper or Scissors","Rock"));
 
 }
 
-console.log(`Human: ${getHumanChoice()}`);
-console.log(`Computer: ${getComputerChoice()}`);
 
 
+function playRound(humanChoice, computerChoice){
+  humanChoice = humanChoice.toUpperCase();
+  console.log(`Human: ${humanChoice}`);
+  console.log(`Computer: ${computerChoice}`);
+
+}
 
 
-
+playRound(getHumanChoice(),getComputerChoice());
