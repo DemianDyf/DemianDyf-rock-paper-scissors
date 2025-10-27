@@ -13,15 +13,15 @@ function getComputerChoice(){
 
   switch(choiceNumber){
     case 0:
-      choiceString = "Rock";
+      choiceString = "ROCK";
       break;
     
     case 1:
-      choiceString = "Paper";
+      choiceString = "PAPER";
       break;
 
     case 2:
-      choiceString = "Scissors";
+      choiceString = "SCISSORS";
       break;
 
     default:
@@ -43,6 +43,23 @@ function playRound(humanChoice, computerChoice){
   humanChoice = humanChoice.toUpperCase();
   console.log(`Human: ${humanChoice}`);
   console.log(`Computer: ${computerChoice}`);
+  if (humanChoice === "ROCK"){
+    switch (computerChoice){
+      case "ROCK":
+        console.log(`That's a tie! ${humanChoice} equals ${computerChoice}`);
+        break;
+
+      case "PAPER":
+        console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
+        break;
+      
+      case "SCISSORS":
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        break;
+
+    }
+
+  }
 
 }
 
