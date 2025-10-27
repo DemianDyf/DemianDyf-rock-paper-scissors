@@ -4,8 +4,6 @@ Create a function called getComputerChoice
   Call function getComputerChoice  
 */
 
-let humanScore = 0;
-let computerScore = 0;
 
 function getComputerChoice(){
   let choiceNumber = Math.floor(Math.random()*3);
@@ -38,8 +36,11 @@ function getHumanChoice(){
 }
 
 
+function playGame(){
+  let humanScore = 0;
+  let computerScore = 0;
 
-function playRound(humanChoice, computerChoice){
+  function playRound(humanChoice, computerChoice){
   humanChoice = humanChoice.toUpperCase();
   console.log(`Human: ${humanChoice}`);
   console.log(`Computer: ${computerChoice}`);
@@ -51,12 +52,12 @@ function playRound(humanChoice, computerChoice){
 
       case "PAPER":
         console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
-        computerScore =+ 1;
+        computerScore += 1;
         break;
       
       case "SCISSORS":
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        humanScore =+1;
+        humanScore +=1;
         break;
 
     }
@@ -65,7 +66,7 @@ function playRound(humanChoice, computerChoice){
       switch (computerChoice){
       case "ROCK":
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        humanScore =+1;
+        humanScore +=1;
         break;      
 
       case "PAPER":
@@ -74,7 +75,7 @@ function playRound(humanChoice, computerChoice){
       
       case "SCISSORS":
         console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
-        computerScore =+ 1;
+        computerScore += 1;
         break;
 
     }
@@ -84,12 +85,12 @@ function playRound(humanChoice, computerChoice){
     switch (computerChoice){
       case "ROCK":
         console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
-        computerScore =+ 1;
+        computerScore += 1;
         break;
 
       case "PAPER":
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        humanScore =+1;
+        humanScore +=1;
         break;
       
       case "SCISSORS":
@@ -101,8 +102,19 @@ function playRound(humanChoice, computerChoice){
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection,computerSelection);
-console.log(`Computer score is ${computerScore} and Human score is ${humanScore}`);
+  for(let i =0; i < 5; i++){
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+
+  }
+
+console.log(`Game over! Computer score is ${computerScore} and Human score is ${humanScore}`);
+
+
+}
+
+playGame();
+
