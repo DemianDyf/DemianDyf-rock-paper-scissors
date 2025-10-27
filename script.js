@@ -51,14 +51,52 @@ function playRound(humanChoice, computerChoice){
 
       case "PAPER":
         console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
+        computerScore =+ 1;
         break;
       
       case "SCISSORS":
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore =+1;
         break;
 
     }
 
+  } else if(humanChoice === "PAPER"){
+      switch (computerChoice){
+      case "ROCK":
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore =+1;
+        break;      
+
+      case "PAPER":
+        console.log(`That's a tie! ${humanChoice} equals ${computerChoice}`);
+        break;
+      
+      case "SCISSORS":
+        console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
+        computerScore =+ 1;
+        break;
+
+    }
+
+  } else if (humanChoice === "SCISSORS"){
+     
+    switch (computerChoice){
+      case "ROCK":
+        console.log(`You lose! ${computerChoice} beats ${humanChoice} `);
+        computerScore =+ 1;
+        break;
+
+      case "PAPER":
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore =+1;
+        break;
+      
+      case "SCISSORS":
+        console.log(`That's a tie! ${humanChoice} equals ${computerChoice}`);
+        break;
+
+  }
   }
 
 }
@@ -67,3 +105,4 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
+console.log(`Computer score is ${computerScore} and Human score is ${humanScore}`);
