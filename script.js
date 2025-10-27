@@ -7,7 +7,6 @@ Create a function called getComputerChoice
 function getComputerChoice(){
   let choiceNumber = Math.floor(Math.random()*3);
   let choiceString;
-  console.log(choiceNumber);
 
   switch(choiceNumber){
     case 0:
@@ -30,7 +29,14 @@ function getComputerChoice(){
 
 }
 
-console.log(getComputerChoice());
+function getHumanChoice(){
+  return (prompt("Choose Rock, Papaer or Scissors","Rock"));
+
+}
+
+console.log(`Human: ${getHumanChoice()}`);
+console.log(`Computer: ${getComputerChoice()}`);
+
 
 
 
